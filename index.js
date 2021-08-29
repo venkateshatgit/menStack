@@ -1,34 +1,32 @@
-// http is built in module
-// using http we create serever that serves request and responds action
+const express=require('express')
+const ejs=require('ejs')
 
-const http = require('http')
-const fs = require('fs')
-const homePage = fs.readFileSync('index.html')
-const aboutPage = fs.readFileSync('about.html')
-const contactPage = fs.readFileSync('contact.html')
-const notFoundPage = fs.readFileSync('notFound.html')
+const app=express()
+app.use(express.static('public'))
+app.set('view engine', 'ejs')
 
-const server = http.createServer((req, res) =>{
-
-
-    //different page populated on different request url
-    if(req.url==='/about')
-        res.end(aboutPage)
-
-    else if(req.url==='/contact')
-        res.end(contactPage)
-
-    else if(req.url==='/')
-        res.end(homePage)
-
-    else{
-        res.writeHead(400)
-        res.end(notFoundPage)
-    }
-
+const path=require('path')
+app.listen(4000, ()=>{
+    console.log("App server started at port 4000")
 })
 
-//our application will listen our request through port 3000
-server.listen(3000)
+app.get('/', (req, res)=>{
+    //res.sendFile(path.resolve(__dirname , 'pages/index.html'))
+    res.render('index')
+})
 
+app.get('/contact', (req, res)=>{
+    //res.sendFile(path.resolve(__dirname , 'pages/contact.html'))
+    res.render('contact')
+})
+
+app.get('/post', (req, res)=>{
+    //res.sendFile(path.resolve(__dirname , 'pages/post.html'))
+    res.render('post')
+})
+
+app.get('/about', (req, res)=>{
+    //res.sendFile(path.resolve(__dirname , 'pages/about.html'))
+    res.render('about')
+})
 
