@@ -15,3 +15,11 @@ In express static files can not execute dynamically so we have to tell it to use
       app.use(express.static('public'))![Screenshot (367)](https://user-images.githubusercontent.com/72207261/131223142-cc0bc1dc-2e1e-43dd-99c2-1462039c2ff4.png)
 
 we have to mention all static files in public directory, also do not mention public in href when we want to access file's asset
+
+
+# Using EJS and Templating 
+EJS has done lot of work easy.No need to find absolute path. Just store all route files in views folder and whenever we get request of certain address it will search into views folder and render particular file
+Also learnt about templating, it have savvvveddd my hands from breaking. 
+![Screenshot (369)](https://user-images.githubusercontent.com/72207261/131253754-6e5da97e-0f71-480d-bd1f-5bc9116f077b.png)
+
+In views folder there are all routing files and in layout folder all the common template used by routing files. We have to give extension of ejs.
