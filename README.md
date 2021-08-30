@@ -24,10 +24,10 @@ Also learnt about templating, it have savvvveddd my hands from breaking.
 
 In views folder there are all routing files and in layout folder all the common template used by routing files. We have to give extension of ejs.
 
-#Connecting to mongoDB
+# Connecting to mongoDB
 Start mongodb server. Mongoose connects nodejs with mongodb. ![Screenshot (371)](https://user-images.githubusercontent.com/72207261/131368055-035633c6-6236-4531-aeb1-bdb16c8ba99a.png)
 
-#Creating Schema
+# Creating Schema
 MongoDB doesn't care about schema but we have to create to standardize the fields otherwise it becomes difficult to us remembering.
 ![Screenshot (373)](https://user-images.githubusercontent.com/72207261/131368834-669eb6a4-d325-439b-b76e-0c20507cf3a8.png)
 
